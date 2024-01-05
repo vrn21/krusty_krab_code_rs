@@ -1,5 +1,5 @@
 [package]
-name = "{{project-name}}"
+name = "precise_age_calculator_rs"
 version = "0.1.0"
 authors = ["{{authors}}"]
 edition = "2021"
