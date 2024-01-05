@@ -1,31 +1,42 @@
-import { TextEdit , VerticalBox,Button} from "std-widgets.slint";
+import { TextEdit , VerticalBox,Button, GroupBox, HorizontalBox} from "std-widgets.slint";
 export component Example inherits Window {
     width: 1080px;
-    height: 200px;
+    height: 600px;
     VerticalBox {
         alignment: center;
         padding: 10px;
         TextEdit {
             font-size: 14px;
             width: parent.width;
-            height: parent.height;
-            text: "//Insert your rusty code over here \n \nfn main(){\n  \n}";
+            height: 400px;
+            text: "//hello world! I'm Krusty the Krab and i like money lol. \n \n//Insert your rusty code over here and i will do the rest \n \nfn main(){\n  \n}";
         }
         Button {
             width: 500px;
-            text: "Compile code";
+            text: "let him cook (compile code)";
             clicked => { 
                 //compile code logic
                 self.text = "Compiled";
              }
         }
-        TextEdit {
-            read-only: true;
-            font-size: 14px;
-            width: 500px;
-            height: parent.height;
-            text: "//Your output over here \n \n write some code first!!";
+        HorizontalBox {
+            TextEdit {
+                read-only: true;
+                font-size: 14px;
+                width: 500px;
+                height: 250px;
+                text: "//Compile time warnings \n \n let him start cooking!!";
+            }
+            TextEdit {
+                read-only: true;
+                font-size: 14px;
+                width: 500px;
+                height: 250px;
+                text: "//Your output over here \n \n Write some code first, Krusty is starting to feel bored";
+            }
+    
         }
+        
 
     }
     
