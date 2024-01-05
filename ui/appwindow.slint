@@ -1,17 +1,32 @@
-import { Button, VerticalBox } from "std-widgets.slint";
-
-export component AppWindow inherits Window {
-    in-out property<int> counter: 42;
-    callback request-increase-value();
+import { TextEdit , VerticalBox,Button} from "std-widgets.slint";
+export component Example inherits Window {
+    width: 1080px;
+    height: 200px;
     VerticalBox {
-        Text {
-            text: "Counter: \{root.counter}";
+        alignment: center;
+        padding: 10px;
+        TextEdit {
+            font-size: 14px;
+            width: parent.width;
+            height: parent.height;
+            text: "//Insert your rusty code over here \n \nfn main(){\n  \n}";
         }
         Button {
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
-            }
+            width: 500px;
+            text: "Compile code";
+            clicked => { 
+                //compile code logic
+                self.text = "Compiled";
+             }
         }
+        TextEdit {
+            read-only: true;
+            font-size: 14px;
+            width: 500px;
+            height: parent.height;
+            text: "//Your output over here \n \n write some code first!!";
+        }
+
     }
+    
 }

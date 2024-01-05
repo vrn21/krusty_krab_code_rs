@@ -1,5 +1,6 @@
 slint::include_modules!();
 
+//bussiness logic in this case compiling the code
 fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
 
