@@ -23,8 +23,8 @@ export component Example inherits Window {
     height: 690px;
 
     in-out property <string> code: "//hello world! I'm Krusty the Krab and i like money lol. \n \n//Insert your rusty code over here and i will do the rest\n \n//Also,I tell NO to code that asks input from user \n \n \nfn main(){\n     //write code here\n}";
-    out property <string> warnings : "//Compile time warnings \n \n let him start cooking!!";
-    out property <string> result : "//Your output over here \n \n Write some code first, Krusty is starting to feel bored";
+    out property <string> stderr: "//Compile time warnings \n \n let him start cooking!!";
+    out property <string> stdout : "//Your output over here \n \n Write some code first, Krusty is starting to feel bored";
 
     callback compile-code-rs(string,string,string);
 
@@ -51,29 +51,28 @@ export component Example inherits Window {
                 //compile code logic
                 self.text = "Compiled";
                 self.primary = !self.primary;
-                compile_code_rs(MainCode.text,Warnings.text,Result.text);
-    
+                compile_code_rs(MainCode.text,StdErr.text,StdOut.text);
              }
         }
         
         HorizontalBox {
             padding: 10px;
             
-            Warnings := TextEdit {
+            StdErr := TextEdit {
                 read-only: true;
                 font-size: 18px;
                 width: 50%;
                 height: 250px;
-                text: warnings;
+                text: stderr;
                 
             }
 
-            Result := TextEdit {
+            StdOut := TextEdit {
                 read-only: true;
                 font-size: 18px;
                 width: 50%;
                 height: 250px;
-                text: result;
+                text: stdout;
             }
         }
         
