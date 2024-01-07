@@ -1,26 +1,8 @@
 import { TextEdit , VerticalBox,Button, GroupBox, HorizontalBox} from "std-widgets.slint";
-
-component MainCodeEditor {
-    
-}
-
-component CompileTimeWarnings {
-    
-}
-
-component CompileButton {
-    
-}
-
-component ResultCompiled {
-    
-}
-
-
 export component Example inherits Window {
     background: #131516;
     width: 1080px;
-    height: 690px;
+    height: 400px;
 
     in-out property <string> code: "//hello world! I'm Krusty the Krab and i like money lol. \n \n//Insert your rusty code over here and i will do the rest\n \n//Also,I tell NO to code that asks input from user \n \n \nfn main(){\n     //write code here\n}";
     out property <string> stderr: "//Compile time warnings \n \n let him start cooking!!";
@@ -35,9 +17,9 @@ export component Example inherits Window {
         spacing: 10px;
 
         MainCode := TextEdit {
-            font-size: 21px;
-            width: parent.width;
-            height: 400px;
+            font-size: 18px;
+            width: 80%;
+            height: 300px;
             text: code;
         }
         
@@ -49,13 +31,16 @@ export component Example inherits Window {
             primary: true;
             clicked => { 
                 //compile code logic
-                self.text = "Compiled";
+                self.text = "Compiling";
                 self.primary = !self.primary;
-                compile_code_rs(MainCode.text,StdErr.text,StdOut.text);
+                stderr = "He is cooking, wait patiently...!";
+                stdout = "Wait until he brings the meal...";
+                // compile_code_rs(MainCode.text,StdErr.text,StdOut.text);
+                self.text = "Compiled";
              }
         }
         
-        HorizontalBox {
+        OutputSection := HorizontalBox {
             padding: 10px;
             
             StdErr := TextEdit {
