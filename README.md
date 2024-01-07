@@ -1,3 +1,15 @@
+<h1>kRusty Krab Code</h1>
+
+<p>This is a small GUI app, built with Slint UI framework and the Rust Programming language. This app lets users write small snippets of rust code and run it using the machine, without installing rustc/cargo on their machine.</p>
+
+<p>For completing the project, I have used the API of Rust playground and used reqwest crate to execute</p>
+
+<p>Big Thanks to <i><b>github.com/menard-codes</b></i> which i refered for completing the project.</p>
+
+<p>As well as <i><b>youtube.com/@TravisMedia</i></i>b> for inspiring me in building a gui with rust</p>
+
+
+
 # Slint Rust Template
 
 A template for a Rust application that's using [Slint](https://slint.rs) for the user interface.
