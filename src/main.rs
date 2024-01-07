@@ -7,7 +7,7 @@ use std::collections::HashMap;
 
 
 //bussiness logic in this case compiling the code
-fn main() -> Result<(), slint::PlatformError> {
+async fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
     let ui_handle = ui.as_weak();
     ui.compile_code_rs(move |string,string,string| {
