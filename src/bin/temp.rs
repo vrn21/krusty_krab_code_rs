@@ -66,7 +66,7 @@ async fn main() {
     //     // Handle the error here
     //     eprintln!("Error: {:?}", err);
     // }
-    let code = "//hello world! I'm Krusty the Krab and i like money lol. \n \n//Insert your rusty code over here and i will do the rest\n \n//Also,I tell NO to code that asks input from user \n \n \nfn main(){\n    println!(); //write code here\n}";
+    let code = "//hello world! I'm Krusty the Krab and i like money lol. \n \n//Insert your rusty code over here and i will do the rest\n \n//Also,I tell NO to code that asks input from user \n \n \nfn main(){\n    println!(\"hello world\"); //write code here\n}";
     let client = piston_rs::Client::new();
     let executor = piston_rs::Executor::new()
         .set_language("rust")
